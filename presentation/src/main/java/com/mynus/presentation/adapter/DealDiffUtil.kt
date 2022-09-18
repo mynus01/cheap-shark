@@ -1,4 +1,4 @@
-package com.mynus.cheapshark.presentation.view.adapter
+package com.mynus.presentation.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.mynus.domain.model.Deal

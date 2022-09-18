@@ -1,4 +1,4 @@
-package com.mynus.cheapshark.presentation.view.adapter
+package com.mynus.presentation.adapter
 
 import android.graphics.Paint
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mynus.cheapshark.R
-import com.mynus.cheapshark.databinding.ItemDealBinding
 import com.mynus.domain.model.Deal
-import com.mynus.cheapshark.presentation.view.util.loadImage
+import com.mynus.presentation.R
+import com.mynus.presentation.databinding.ItemDealBinding
+import com.mynus.presentation.util.loadImage
 
 class DealsAdapter(
     private val onItemClick: (deal: Deal) -> Unit

@@ -1,14 +1,13 @@
-package com.mynus.cheapshark.presentation.view.fragment
+package com.mynus.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.mynus.cheapshark.databinding.FragmentDetailsBinding
 import com.mynus.domain.model.Deal
-import com.mynus.cheapshark.presentation.view.util.loadImage
+import com.mynus.presentation.databinding.FragmentDetailsBinding
+import com.mynus.presentation.util.loadImage
 
 class DetailsBottomSheetFragment(
     private val deal: Deal

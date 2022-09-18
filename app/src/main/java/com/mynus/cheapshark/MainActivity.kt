@@ -1,4 +1,4 @@
-package com.mynus.cheapshark.presentation.view.activity
+package com.mynus.cheapshark
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,8 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import com.mynus.cheapshark.databinding.ActivityMainBinding
 import com.mynus.datasource.mediator.DealsMediator
 import com.mynus.domain.model.Deal
-import com.mynus.cheapshark.presentation.view.adapter.DealsAdapter
-import com.mynus.cheapshark.presentation.view.fragment.DetailsBottomSheetFragment
+import com.mynus.presentation.adapter.DealsAdapter
+import com.mynus.presentation.fragment.DetailsBottomSheetFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -18,7 +18,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     @Inject
-    lateinit var mediator: com.mynus.datasource.mediator.DealsMediator
+    lateinit var mediator: DealsMediator
     private val adapter: DealsAdapter by lazy { DealsAdapter(::onItemClick) }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,8 +1,8 @@
-package com.mynus.cheapshark.presentation.view.util
+package com.mynus.presentation.util
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.mynus.cheapshark.R
+import com.mynus.presentation.R
 
 fun ImageView.loadImage(url: String) {
     Glide.with(context)

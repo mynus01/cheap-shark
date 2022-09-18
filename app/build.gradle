@@ -51,6 +51,7 @@ kapt {
 dependencies {
     implementation project(":datasource")
     implementation project(":domain")
+    implementation project(":presentation")
 
     def lifecycleVersion = "2.5.1"
     def hiltVersion = "2.43.2"
@@ -64,7 +65,6 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.activity:activity-ktx:1.5.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
