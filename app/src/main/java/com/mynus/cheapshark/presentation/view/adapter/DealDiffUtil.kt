@@ -1,7 +1,7 @@
 package com.mynus.cheapshark.presentation.view.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.mynus.cheapshark.domain.model.Deal
+import com.mynus.domain.model.Deal
 
 class DealDiffUtil: DiffUtil.ItemCallback<Deal>() {
     override fun areItemsTheSame(oldItem: Deal, newItem: Deal): Boolean {

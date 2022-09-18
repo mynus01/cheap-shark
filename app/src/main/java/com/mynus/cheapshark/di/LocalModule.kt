@@ -2,8 +2,8 @@ package com.mynus.cheapshark.di
 
 import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepositoryImpl
 import com.mynus.cheapshark.datasource.local.service.DealLocalServiceImpl
-import com.mynus.cheapshark.domain.repository.GetDealsLocalRepository
-import com.mynus.cheapshark.domain.service.DealLocalService
+import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepository
+import com.mynus.domain.service.DealLocalService
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

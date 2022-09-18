@@ -3,10 +3,10 @@ package com.mynus.cheapshark.di
 import android.content.Context
 import com.mynus.cheapshark.datasource.mediator.DealsMediatorImpl
 import com.mynus.cheapshark.datasource.remote.util.ConnectionCheckerImpl
-import com.mynus.cheapshark.domain.mediator.DealsMediator
-import com.mynus.cheapshark.domain.repository.GetDealsRemoteRepository
-import com.mynus.cheapshark.domain.repository.GetDealsLocalRepository
-import com.mynus.cheapshark.domain.usecase.ConnectionChecker
+import com.mynus.cheapshark.datasource.mediator.DealsMediator
+import com.mynus.cheapshark.datasource.remote.repository.GetDealsRemoteRepository
+import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepository
+import com.mynus.domain.util.ConnectionChecker
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

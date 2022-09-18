@@ -6,8 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.mynus.cheapshark.databinding.ActivityMainBinding
-import com.mynus.cheapshark.domain.mediator.DealsMediator
-import com.mynus.cheapshark.domain.model.Deal
+import com.mynus.cheapshark.datasource.mediator.DealsMediator
+import com.mynus.domain.model.Deal
 import com.mynus.cheapshark.presentation.view.adapter.DealsAdapter
 import com.mynus.cheapshark.presentation.view.fragment.DetailsBottomSheetFragment
 import dagger.hilt.android.AndroidEntryPoint

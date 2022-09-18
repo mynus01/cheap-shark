@@ -8,7 +8,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mynus.cheapshark.R
 import com.mynus.cheapshark.databinding.ItemDealBinding
-import com.mynus.cheapshark.domain.model.Deal
+import com.mynus.domain.model.Deal
 import com.mynus.cheapshark.presentation.view.util.loadImage
 
 class DealsAdapter(

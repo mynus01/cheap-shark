@@ -1,7 +1,7 @@
 package com.mynus.cheapshark.di
 
 import com.mynus.cheapshark.datasource.remote.repository.DealsRemoteRepositoryImpl
-import com.mynus.cheapshark.domain.repository.GetDealsRemoteRepository
+import com.mynus.cheapshark.datasource.remote.repository.GetDealsRemoteRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

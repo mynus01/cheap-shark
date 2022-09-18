@@ -1,6 +1,6 @@
 package com.mynus.cheapshark.datasource.remote.service
 
-import com.mynus.cheapshark.domain.Constants.Endpoints
+import com.mynus.domain.util.Constants.Endpoints
 import com.mynus.cheapshark.datasource.remote.dto.DealDTO
 import retrofit2.http.GET
 import retrofit2.http.Query

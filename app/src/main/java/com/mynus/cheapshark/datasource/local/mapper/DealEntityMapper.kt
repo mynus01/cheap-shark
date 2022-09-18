@@ -1,7 +1,7 @@
 package com.mynus.cheapshark.datasource.local.mapper
 
 import com.mynus.cheapshark.datasource.local.entity.DealEntity
-import com.mynus.cheapshark.domain.model.Deal
+import com.mynus.domain.model.Deal
 
 object DealEntityMapper {
     fun fromEntity(entity: DealEntity): Deal {

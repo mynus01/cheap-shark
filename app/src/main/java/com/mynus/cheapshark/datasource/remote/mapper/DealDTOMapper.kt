@@ -1,7 +1,7 @@
 package com.mynus.cheapshark.datasource.remote.mapper
 
 import com.mynus.cheapshark.datasource.remote.dto.DealDTO
-import com.mynus.cheapshark.domain.model.Deal
+import com.mynus.domain.model.Deal
 
 object DealDTOMapper {
     fun fromDTO(dto: DealDTO): Deal {

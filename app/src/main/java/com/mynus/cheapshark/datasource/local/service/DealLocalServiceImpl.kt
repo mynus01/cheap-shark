@@ -2,8 +2,8 @@ package com.mynus.cheapshark.datasource.local.service
 
 import com.mynus.cheapshark.datasource.local.dao.DealDao
 import com.mynus.cheapshark.datasource.local.mapper.DealEntityMapper
-import com.mynus.cheapshark.domain.model.Deal
-import com.mynus.cheapshark.domain.service.DealLocalService
+import com.mynus.domain.model.Deal
+import com.mynus.domain.service.DealLocalService
 import javax.inject.Inject
 
 class DealLocalServiceImpl @Inject constructor(

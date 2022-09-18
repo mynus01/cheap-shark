@@ -1,11 +1,10 @@
 package com.mynus.cheapshark.datasource.mediator
 
 import androidx.paging.PagingData
-import com.mynus.cheapshark.domain.mediator.DealsMediator
-import com.mynus.cheapshark.domain.model.Deal
-import com.mynus.cheapshark.domain.repository.GetDealsRemoteRepository
-import com.mynus.cheapshark.domain.repository.GetDealsLocalRepository
-import com.mynus.cheapshark.domain.usecase.ConnectionChecker
+import com.mynus.domain.model.Deal
+import com.mynus.cheapshark.datasource.remote.repository.GetDealsRemoteRepository
+import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepository
+import com.mynus.domain.util.ConnectionChecker
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

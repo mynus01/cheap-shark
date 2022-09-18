@@ -4,8 +4,8 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.mynus.cheapshark.datasource.remote.mapper.DealDTOMapper
 import com.mynus.cheapshark.datasource.remote.service.CheapSharkAPIService
-import com.mynus.cheapshark.domain.model.Deal
-import com.mynus.cheapshark.domain.service.DealLocalService
+import com.mynus.domain.model.Deal
+import com.mynus.domain.service.DealLocalService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

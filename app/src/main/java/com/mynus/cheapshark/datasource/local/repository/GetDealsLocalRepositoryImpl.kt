@@ -5,8 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.mynus.cheapshark.datasource.local.dao.DealDao
 import com.mynus.cheapshark.datasource.local.paging.DealsLocalPagingSource
-import com.mynus.cheapshark.domain.model.Deal
-import com.mynus.cheapshark.domain.repository.GetDealsLocalRepository
+import com.mynus.domain.model.Deal
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
