@@ -1,11 +1,11 @@
 package com.mynus.cheapshark.di
 
 import android.content.Context
-import com.mynus.cheapshark.datasource.mediator.DealsMediatorImpl
-import com.mynus.cheapshark.datasource.remote.util.ConnectionCheckerImpl
-import com.mynus.cheapshark.datasource.mediator.DealsMediator
-import com.mynus.cheapshark.datasource.remote.repository.GetDealsRemoteRepository
-import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepository
+import com.mynus.datasource.mediator.DealsMediatorImpl
+import com.mynus.datasource.remote.util.ConnectionCheckerImpl
+import com.mynus.datasource.mediator.DealsMediator
+import com.mynus.datasource.remote.repository.GetDealsRemoteRepository
+import com.mynus.datasource.local.repository.GetDealsLocalRepository
 import com.mynus.domain.util.ConnectionChecker
 import dagger.Module
 import dagger.Provides
@@ -20,15 +20,15 @@ class UtilModule {
     fun connectionCheckerProvider(
         @ApplicationContext ctx: Context
     ): ConnectionChecker {
-        return ConnectionCheckerImpl(ctx)
+        return com.mynus.datasource.remote.util.ConnectionCheckerImpl(ctx)
     }
 
     @Provides
     fun dealsMediatorProvider(
-        remoteRepository: GetDealsRemoteRepository,
-        localRepository: GetDealsLocalRepository,
+        remoteRepository: com.mynus.datasource.remote.repository.GetDealsRemoteRepository,
+        localRepository: com.mynus.datasource.local.repository.GetDealsLocalRepository,
         connectionChecker: ConnectionChecker
-    ): DealsMediator {
-        return DealsMediatorImpl(remoteRepository, localRepository, connectionChecker)
+    ): com.mynus.datasource.mediator.DealsMediator {
+        return com.mynus.datasource.mediator.DealsMediatorImpl(remoteRepository, localRepository, connectionChecker)
     }
 }

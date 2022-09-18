@@ -3,8 +3,8 @@ package com.mynus.cheapshark.di
 import android.content.Context
 import androidx.room.Room
 import com.mynus.cheapshark.BuildConfig
-import com.mynus.cheapshark.datasource.local.dao.DealDao
-import com.mynus.cheapshark.datasource.local.database.CheapSharkDatabase
+import com.mynus.datasource.local.dao.DealDao
+import com.mynus.datasource.local.database.CheapSharkDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,15 +17,15 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Provides
     @Singleton
-    fun databaseProvider(@ApplicationContext appContext: Context): CheapSharkDatabase {
+    fun databaseProvider(@ApplicationContext appContext: Context): com.mynus.datasource.local.database.CheapSharkDatabase {
         return Room.databaseBuilder(
             appContext,
-            CheapSharkDatabase::class.java, BuildConfig.DB_NAME
+            com.mynus.datasource.local.database.CheapSharkDatabase::class.java, BuildConfig.DB_NAME
         ).build()
     }
 
     @Provides
-    fun dealDaoProvider(database: CheapSharkDatabase): DealDao {
+    fun dealDaoProvider(database: com.mynus.datasource.local.database.CheapSharkDatabase): com.mynus.datasource.local.dao.DealDao {
         return database.dealDao()
     }
 }

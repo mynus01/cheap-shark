@@ -1,7 +1,7 @@
 package com.mynus.cheapshark.di
 
 import com.mynus.cheapshark.BuildConfig
-import com.mynus.cheapshark.datasource.remote.service.CheapSharkAPIService
+import com.mynus.datasource.remote.service.CheapSharkAPIService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -50,7 +50,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun serviceProvider(retrofit: Retrofit): CheapSharkAPIService {
-        return retrofit.create(CheapSharkAPIService::class.java)
+    fun serviceProvider(retrofit: Retrofit): com.mynus.datasource.remote.service.CheapSharkAPIService {
+        return retrofit.create(com.mynus.datasource.remote.service.CheapSharkAPIService::class.java)
     }
 }

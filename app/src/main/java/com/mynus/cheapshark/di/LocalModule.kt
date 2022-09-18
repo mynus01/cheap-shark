@@ -1,8 +1,8 @@
 package com.mynus.cheapshark.di
 
-import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepositoryImpl
-import com.mynus.cheapshark.datasource.local.service.DealLocalServiceImpl
-import com.mynus.cheapshark.datasource.local.repository.GetDealsLocalRepository
+import com.mynus.datasource.local.repository.GetDealsLocalRepositoryImpl
+import com.mynus.datasource.local.service.DealLocalServiceImpl
+import com.mynus.datasource.local.repository.GetDealsLocalRepository
 import com.mynus.domain.service.DealLocalService
 import dagger.Binds
 import dagger.Module
@@ -13,8 +13,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface LocalModule {
     @Binds
-    fun localServiceProvider(impl: DealLocalServiceImpl): DealLocalService
+    fun localServiceProvider(impl: com.mynus.datasource.local.service.DealLocalServiceImpl): DealLocalService
 
     @Binds
-    fun getDealsRepositoryProvider(impl: GetDealsLocalRepositoryImpl): GetDealsLocalRepository
+    fun getDealsRepositoryProvider(impl: com.mynus.datasource.local.repository.GetDealsLocalRepositoryImpl): com.mynus.datasource.local.repository.GetDealsLocalRepository
 }
