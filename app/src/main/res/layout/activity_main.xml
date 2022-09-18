@@ -5,7 +5,7 @@
     android:id="@+id/swDeals"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mynus.cheapshark.MainActivity">
+    tools:context="com.mynus.cheapshark.activity.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
