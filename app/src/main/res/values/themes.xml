@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.CheapShark" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorAccent">@color/orange_web</item>
+
+        <item name="android:statusBarColor">?attr/colorAccent</item>
+    </style>
+</resources>

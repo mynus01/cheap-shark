@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c1ac1e840ff66679215640d70b7144ec",
+    "entities": [
+      {
+        "tableName": "DealEntity",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dealID` TEXT NOT NULL, `title` TEXT NOT NULL, `salePrice` TEXT NOT NULL, `normalPrice` TEXT NOT NULL, `isOnSale` INTEGER NOT NULL, `thumb` TEXT NOT NULL, PRIMARY KEY(`dealID`))",
+        "fields": [
+          {
+            "fieldPath": "dealID",
+            "columnName": "dealID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salePrice",
+            "columnName": "salePrice",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalPrice",
+            "columnName": "normalPrice",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isOnSale",
+            "columnName": "isOnSale",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thumb",
+            "columnName": "thumb",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "dealID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c1ac1e840ff66679215640d70b7144ec')"
+    ]
+  }
+}
