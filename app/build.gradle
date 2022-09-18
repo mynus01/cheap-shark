@@ -50,8 +50,6 @@ kapt {
 
 dependencies {
     implementation project(":domain")
-    implementation project(":datasource")
-    implementation project(":presentation")
 
     def lifecycleVersion = "2.5.1"
     def hiltVersion = "2.43.2"

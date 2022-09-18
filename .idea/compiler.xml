@@ -3,6 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="CheapShark.core" target="11" />
+      <module name="CheapShark.datasource" target="11" />
+      <module name="CheapShark.presentation" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
