@@ -6,7 +6,7 @@ import com.mynus.datasource.remote.util.ConnectionCheckerImpl
 import com.mynus.datasource.mediator.DealsMediator
 import com.mynus.datasource.remote.repository.GetDealsRemoteRepository
 import com.mynus.datasource.local.repository.GetDealsLocalRepository
-import com.mynus.core.util.ConnectionChecker
+import com.mynus.domain.util.ConnectionChecker
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
