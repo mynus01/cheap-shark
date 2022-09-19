@@ -4,7 +4,7 @@ import androidx.paging.*
 import com.mynus.datasource.local.dao.DealDao
 import com.mynus.datasource.local.mapper.DealEntityMapper
 import com.mynus.domain.model.Deal
-import com.mynus.domain.util.Constants
+import com.mynus.core.util.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

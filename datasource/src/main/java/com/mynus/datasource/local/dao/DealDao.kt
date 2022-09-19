@@ -2,7 +2,7 @@ package com.mynus.datasource.local.dao
 
 import androidx.room.*
 import com.mynus.datasource.local.entity.DealEntity
-import com.mynus.domain.util.Constants
+import com.mynus.core.util.Constants
 
 @Dao
 interface DealDao {

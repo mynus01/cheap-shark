@@ -7,7 +7,7 @@ import com.mynus.datasource.remote.paging.DealsRemotePagingSource
 import com.mynus.datasource.remote.service.CheapSharkAPIService
 import com.mynus.domain.model.Deal
 import com.mynus.domain.service.DealLocalService
-import com.mynus.domain.util.Constants
+import com.mynus.core.util.Constants
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

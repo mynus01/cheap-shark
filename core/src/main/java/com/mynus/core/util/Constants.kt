@@ -1,4 +1,4 @@
-package com.mynus.domain.util
+package com.mynus.core.util
 
 object Constants {
     object Endpoints {

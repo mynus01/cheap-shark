@@ -1,4 +1,4 @@
-package com.mynus.domain.util
+package com.mynus.core.util
 
 interface ConnectionChecker {
     fun hasConnection(): Boolean

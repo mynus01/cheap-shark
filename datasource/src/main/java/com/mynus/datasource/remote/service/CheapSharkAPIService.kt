@@ -1,6 +1,6 @@
 package com.mynus.datasource.remote.service
 
-import com.mynus.domain.util.Constants.Endpoints
+import com.mynus.core.util.Constants.Endpoints
 import com.mynus.datasource.remote.dto.DealDTO
 import retrofit2.http.GET
 import retrofit2.http.Query

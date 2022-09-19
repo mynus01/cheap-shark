@@ -6,7 +6,7 @@ import com.mynus.datasource.remote.util.ConnectionCheckerImpl
 import com.mynus.datasource.mediator.DealsMediator
 import com.mynus.datasource.remote.repository.GetDealsRemoteRepository
 import com.mynus.datasource.local.repository.GetDealsLocalRepository
-import com.mynus.domain.util.ConnectionChecker
+import com.mynus.core.util.ConnectionChecker
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,15 +20,15 @@ class UtilModule {
     fun connectionCheckerProvider(
         @ApplicationContext ctx: Context
     ): ConnectionChecker {
-        return com.mynus.datasource.remote.util.ConnectionCheckerImpl(ctx)
+        return ConnectionCheckerImpl(ctx)
     }
 
     @Provides
     fun dealsMediatorProvider(
-        remoteRepository: com.mynus.datasource.remote.repository.GetDealsRemoteRepository,
-        localRepository: com.mynus.datasource.local.repository.GetDealsLocalRepository,
+        remoteRepository: GetDealsRemoteRepository,
+        localRepository: GetDealsLocalRepository,
         connectionChecker: ConnectionChecker
-    ): com.mynus.datasource.mediator.DealsMediator {
-        return com.mynus.datasource.mediator.DealsMediatorImpl(remoteRepository, localRepository, connectionChecker)
+    ): DealsMediator {
+        return DealsMediatorImpl(remoteRepository, localRepository, connectionChecker)
     }
 }
