@@ -11,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface RemoteModule {
     @Binds
-    fun remoteRepositoryProvider(impl: com.mynus.datasource.remote.repository.DealsRemoteRepositoryImpl): com.mynus.datasource.remote.repository.GetDealsRemoteRepository
+    fun remoteRepositoryProvider(impl: DealsRemoteRepositoryImpl): GetDealsRemoteRepository
 }
