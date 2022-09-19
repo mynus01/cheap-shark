@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id "dagger.hilt.android.plugin"
 }
 
 android {
@@ -31,9 +32,21 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
     implementation project(":core")
     implementation project(":domain")
 
+    def hiltVersion = "2.43.2"
+    def roomVersion = "2.4.3"
+
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 }

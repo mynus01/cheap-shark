@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.isGone
 import androidx.lifecycle.lifecycleScope
+import com.mynus.cheapshark.R
 import com.mynus.cheapshark.databinding.ActivityMainBinding
 import com.mynus.domain.model.Deal
 import com.mynus.presentation.adapter.DealsAdapter
