@@ -14,7 +14,6 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val mediator: DealsMediator
 ): ViewModel() {
-
     private val _state = MutableSharedFlow<PagingData<Deal>>()
     val state = _state.asSharedFlow()
 

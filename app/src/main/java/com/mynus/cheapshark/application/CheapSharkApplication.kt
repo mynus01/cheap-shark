@@ -1,7 +1,7 @@
-package com.mynus.cheapshark
+package com.mynus.cheapshark.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class BaseApplication: Application()
+class CheapSharkApplication: Application()

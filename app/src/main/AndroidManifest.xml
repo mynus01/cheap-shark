@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".BaseApplication"
+        android:name=".application.CheapSharkApplication"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +17,7 @@
         android:theme="@style/Theme.CheapShark"
         tools:targetApi="31">
         <activity
-            android:name="com.mynus.cheapshark.MainActivity"
+            android:name="com.mynus.cheapshark.activity.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>

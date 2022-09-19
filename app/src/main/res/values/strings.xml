@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">CheapShark</string>
-
-    <string name="deal_price_template">$ %s</string>
-    <string name="deal_thumb_description">Deal thumbnail</string>
 </resources>

@@ -1,10 +1,11 @@
-package com.mynus.cheapshark
+package com.mynus.cheapshark.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.view.isGone
 import androidx.lifecycle.lifecycleScope
+import com.mynus.cheapshark.R
 import com.mynus.cheapshark.databinding.ActivityMainBinding
 import com.mynus.domain.model.Deal
 import com.mynus.presentation.adapter.DealsAdapter
@@ -16,7 +17,6 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
     private val viewModel: MainViewModel by viewModels()
     private val adapter: DealsAdapter by lazy { DealsAdapter(::onItemClick) }
 

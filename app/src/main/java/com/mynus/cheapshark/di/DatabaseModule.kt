@@ -17,15 +17,15 @@ import javax.inject.Singleton
 class DatabaseModule {
     @Provides
     @Singleton
-    fun databaseProvider(@ApplicationContext appContext: Context): com.mynus.datasource.local.database.CheapSharkDatabase {
+    fun databaseProvider(@ApplicationContext appContext: Context): CheapSharkDatabase {
         return Room.databaseBuilder(
             appContext,
-            com.mynus.datasource.local.database.CheapSharkDatabase::class.java, BuildConfig.DB_NAME
+            CheapSharkDatabase::class.java, BuildConfig.DB_NAME
         ).build()
     }
 
     @Provides
-    fun dealDaoProvider(database: com.mynus.datasource.local.database.CheapSharkDatabase): com.mynus.datasource.local.dao.DealDao {
+    fun dealDaoProvider(database: CheapSharkDatabase): DealDao {
         return database.dealDao()
     }
 }
