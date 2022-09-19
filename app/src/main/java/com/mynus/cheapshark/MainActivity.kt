@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inflateAndSetContentView()
+        setToolbarIcon()
 
         setAdapter()
         observeDeals()
@@ -30,6 +31,12 @@ class MainActivity : AppCompatActivity() {
     private fun inflateAndSetContentView() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+
+    private fun setToolbarIcon() {
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setIcon(R.mipmap.ic_launcher_foreground)
     }
 
     private fun setAdapter() {
