@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.mynus.datasource.remote.mapper.DealDTOMapper
 import com.mynus.datasource.remote.service.CheapSharkAPIService
 import com.mynus.domain.model.Deal
-import com.mynus.domain.service.DealLocalService
+import com.mynus.domain.repository.DealRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -14,7 +14,7 @@ import java.io.IOException
 
 class DealsRemotePagingSource(
     private val service: CheapSharkAPIService,
-    private val dealLocalService: DealLocalService
+    private val dealRepository: DealRepository
 ) : PagingSource<Int, Deal>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Deal> {
@@ -26,7 +26,7 @@ class DealsRemotePagingSource(
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                dealLocalService.insertDeals(response)
+                dealRepository.insertDeals(response)
             }
 
             LoadResult.Page(

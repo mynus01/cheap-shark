@@ -1,8 +1,8 @@
-package com.mynus.domain.service
+package com.mynus.domain.repository
 
 import com.mynus.domain.model.Deal
 
-interface DealLocalService {
+interface DealRepository {
     fun insertDeal(deal: Deal)
     fun insertDeals(deals: List<Deal>)
     fun getDeal(gameID: String): Deal

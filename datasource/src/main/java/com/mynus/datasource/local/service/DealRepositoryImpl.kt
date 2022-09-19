@@ -3,12 +3,12 @@ package com.mynus.datasource.local.service
 import com.mynus.datasource.local.dao.DealDao
 import com.mynus.datasource.local.mapper.DealEntityMapper
 import com.mynus.domain.model.Deal
-import com.mynus.domain.service.DealLocalService
+import com.mynus.domain.repository.DealRepository
 import javax.inject.Inject
 
-class DealLocalServiceImpl @Inject constructor(
+class DealRepositoryImpl @Inject constructor(
     private val dao: DealDao
-) : DealLocalService {
+) : DealRepository {
     override fun insertDeal(deal: Deal) {
         dao.insertDeal(DealEntityMapper.toEntity(deal))
     }
