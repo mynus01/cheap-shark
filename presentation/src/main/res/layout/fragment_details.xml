@@ -1,125 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="@color/almost_black_blue"
-    app:cardCornerRadius="6dp">
+    android:background="@color/almost_black_blue">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivThumb"
+        tools:text="@tools:sample/cities" />
+
+
+    <ImageView
+        android:id="@+id/ivThumb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/deal_thumb_description"
+        android:scaleType="matrix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle">
 
         <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="0dp"
+            android:id="@+id/tvNormalPrice"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivThumb"
+            android:textSize="16sp"
             tools:text="@tools:sample/cities" />
 
+        <TextView
+            android:id="@+id/tvSalePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="@tools:sample/cities" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginVertical="8dp"
+        android:background="@color/black_like_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMetacritic"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="16dp"
+        app:cardBackgroundColor="@color/black_like_blue"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cvSteam"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
         <ImageView
-            android:id="@+id/ivThumb"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/deal_thumb_description"
-            android:scaleType="matrix"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:layout_margin="8dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvTitle">
+            android:contentDescription="@string/steam_logo_description"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/metacritic" />
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:id="@+id/tvNormalPrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                tools:text="@tools:sample/cities" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSteam"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="16dp"
+        app:cardBackgroundColor="@color/black_like_blue"
+        app:cardCornerRadius="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cvMetacritic"
+        app:layout_constraintTop_toBottomOf="@id/view">
 
-            <TextView
-                android:id="@+id/tvSalePrice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="textEnd"
-                android:textColor="@android:color/white"
-                android:textSize="16sp"
-                tools:text="@tools:sample/cities" />
-        </LinearLayout>
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-            android:layout_marginVertical="8dp"
-            android:background="@color/black_like_blue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvMetacritic"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="16dp"
-            app:cardBackgroundColor="@color/black_like_blue"
-            app:cardCornerRadius="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cvSteam"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/steam_logo_description"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/metacritic" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvSteam"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="16dp"
-            app:cardBackgroundColor="@color/black_like_blue"
-            app:cardCornerRadius="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cvMetacritic"
-            app:layout_constraintTop_toBottomOf="@id/view">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/steam_logo_description"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/steam"
-                app:tint="@color/light_blue"
-                tools:tint="@color/light_blue" />
-        </androidx.cardview.widget.CardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_margin="8dp"
+            android:contentDescription="@string/steam_logo_description"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/steam"
+            app:tint="@color/light_blue"
+            tools:tint="@color/light_blue" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
