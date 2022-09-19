@@ -12,7 +12,9 @@ object DealDTOMapper {
                 salePrice = salePrice,
                 normalPrice = normalPrice,
                 isOnSale = isOnSale == "1",
-                thumb = thumb
+                thumb = thumb,
+                steamAppID = steamAppID,
+                metacriticLink = metacriticLink
             )
         }
     }

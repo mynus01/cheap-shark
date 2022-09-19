@@ -6,5 +6,7 @@ data class DealDTO(
     val salePrice: String,
     val normalPrice: String,
     val isOnSale: String,
-    val thumb: String
+    val thumb: String,
+    val steamAppID: String?,
+    val metacriticLink: String?
 )

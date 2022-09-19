@@ -5,13 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.mynus.domain.model.Deal
+import com.mynus.domain.util.Constants
 import com.mynus.presentation.R
 import com.mynus.presentation.databinding.FragmentDetailsBinding
 import com.mynus.presentation.util.loadImage
+import com.mynus.presentation.util.openUrl
 
 class DetailsBottomSheetFragment(
     private val deal: Deal
@@ -42,6 +43,19 @@ class DetailsBottomSheetFragment(
                 tvNormalPrice.paintFlags = tvNormalPrice.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                 tvNormalPrice.paintFlags = tvNormalPrice.paintFlags
             }
+            setOpenUrlOnClickBehaviour(cvSteam, Constants.Urls.STEAM_APP, deal.steamAppID)
+            setOpenUrlOnClickBehaviour(cvMetacritic, Constants.Urls.METACRITIC, deal.metacriticLink)
+        }
+    }
+
+    private fun setOpenUrlOnClickBehaviour(view: View, baseUrl: String, endpoint: String?) {
+        if (endpoint != null) {
+            view.isInvisible = false
+            view.setOnClickListener {
+                view.context.openUrl(baseUrl + endpoint)
+            }
+        } else {
+            view.isInvisible = true
         }
     }
 }
