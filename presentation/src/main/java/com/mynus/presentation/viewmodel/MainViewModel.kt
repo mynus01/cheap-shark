@@ -18,9 +18,15 @@ class MainViewModel @Inject constructor(
     private val _state = MutableSharedFlow<PagingData<Deal>>()
     val state = _state.asSharedFlow()
 
-    init {
+    private val _loadingState = MutableStateFlow(true)
+    val loadingState = _loadingState.asStateFlow()
+
+    fun getDeals() {
         viewModelScope.launch {
+            _loadingState.emit(true)
+
             mediator.getDeals().collect { pagingData ->
+                _loadingState.emit(false)
                 _state.emit(pagingData)
             }
         }

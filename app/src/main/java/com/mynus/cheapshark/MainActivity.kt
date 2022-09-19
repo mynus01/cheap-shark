@@ -3,6 +3,7 @@ package com.mynus.cheapshark
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.view.isGone
 import androidx.lifecycle.lifecycleScope
 import com.mynus.cheapshark.databinding.ActivityMainBinding
 import com.mynus.domain.model.Deal
@@ -24,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         inflateAndSetContentView()
         setToolbarIcon()
 
-        setAdapter()
-        observeDeals()
+        setViewsBehaviour()
+        initObservers()
     }
 
     private fun inflateAndSetContentView() {
@@ -39,16 +40,33 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setIcon(R.mipmap.ic_launcher_foreground)
     }
 
-    private fun setAdapter() {
-        binding.rvDeals.adapter = adapter
+    private fun setViewsBehaviour() {
+        binding.apply {
+            rvDeals.adapter = adapter
+
+            swDeals.setOnRefreshListener {
+                viewModel.getDeals()
+            }
+        }
     }
 
-    private fun observeDeals() {
+    private fun initObservers() {
         lifecycleScope.launch {
             viewModel.state.collect { pagingData ->
                 adapter.submitData(pagingData)
             }
         }
+
+        lifecycleScope.launch {
+            viewModel.loadingState.collect { isLoading ->
+                binding.apply {
+                    swDeals.isRefreshing = isLoading
+                    rvDeals.isGone = isLoading
+                }
+            }
+        }
+
+        viewModel.getDeals()
     }
 
     private fun onItemClick(deal: Deal) {
