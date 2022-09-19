@@ -16,7 +16,7 @@ class GetDealsLocalRepositoryImpl @Inject constructor(
     override suspend fun get(): Flow<PagingData<Deal>> {
         return Pager(
             config = PagingConfig(
-                pageSize = Constants.MagicNumbers.PAGE_SIZE,
+                pageSize = Constants.MagicValues.PAGE_SIZE,
                 enablePlaceholders = true
             ),
             pagingSourceFactory = { DealsLocalPagingSource(dao) }

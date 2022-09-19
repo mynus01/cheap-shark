@@ -18,7 +18,7 @@ class DealsRemoteRepositoryImpl @Inject constructor(
     override suspend fun get(): Flow<PagingData<Deal>> {
         return Pager(
             config = PagingConfig(
-                pageSize = Constants.MagicNumbers.PAGE_SIZE,
+                pageSize = Constants.MagicValues.PAGE_SIZE,
                 enablePlaceholders = true
             ),
             pagingSourceFactory = { DealsRemotePagingSource(cheapSharkService, dealLocalService) }

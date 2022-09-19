@@ -15,7 +15,7 @@ interface DealDao {
     @Query("SELECT * FROM DealEntity WHERE dealID = :gameID ORDER BY title ASC")
     fun getDeal(gameID: String): DealEntity
 
-    @Query("SELECT * FROM DealEntity ORDER BY title ASC LIMIT ${Constants.MagicNumbers.PAGE_SIZE} OFFSET :offset")
+    @Query("SELECT * FROM DealEntity ORDER BY title ASC LIMIT ${Constants.MagicValues.PAGE_SIZE} OFFSET :offset")
     fun getDeals(offset: Int): List<DealEntity>
 
     @Delete

@@ -1,5 +1,6 @@
 package com.mynus.datasource.remote.service
 
+import com.mynus.core.util.Constants
 import com.mynus.core.util.Constants.Endpoints
 import com.mynus.datasource.remote.dto.DealDTO
 import retrofit2.http.GET
@@ -10,11 +11,11 @@ interface CheapSharkAPIService {
     suspend fun get(
         @Query("pageNumber")
         pageNumber: Int,
+        @Query("pageSize")
+        pageSize: Int = Constants.MagicValues.PAGE_SIZE,
         @Query("sortBy")
-        sortBy: String = "Title",
+        sortBy: String = Constants.MagicValues.SORT_BY,
         @Query("metacritic")
-        metacriticScore: Int = 75,
-        @Query("onSale")
-        onSale: Boolean = true
+        metacriticScore: Int = Constants.MagicValues.MIN_METACRITIC_RATING,
     ): List<DealDTO>
 }

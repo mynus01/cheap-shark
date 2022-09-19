@@ -24,7 +24,7 @@ class DealsLocalPagingSource(
         return@withContext LoadResult.Page(
             data = result,
             prevKey = if (position == 0) null else position,
-            nextKey = if (result.isEmpty()) null else position + Constants.MagicNumbers.PAGE_SIZE
+            nextKey = if (result.isEmpty()) null else position + Constants.MagicValues.PAGE_SIZE
         )
         } catch (e: IOException) {
             return@withContext LoadResult.Error(e)
