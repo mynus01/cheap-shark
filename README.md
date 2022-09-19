@@ -11,15 +11,16 @@ Cheap shark is an application for discovering new games and deals, based on the 
 
 ## 🛠 Built with
 
-- Hilt
-- Retrofit
-- Moshi
-- Room
-- Glide
-- ViewBinding
-- Paging 3
-- Clean Architecture
-- Modularization
+- [Hilt](https://developer.android.com/training/dependency-injection/hilt-android)
+- [Retrofit](https://square.github.io/retrofit/)
+- [Moshi](https://square.github.io/moshi/1.x/moshi/)
+- [Room](https://developer.android.com/training/data-storage/room)
+- [Glide](https://bumptech.github.io/glide/)
+- [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
+- [Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
+- [Modularization](https://developer.android.com/topic/modularization)
+- [MVVM](https://developer.android.com/topic/architecture)
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ## ⚠️ TODO
 - Unit test for services, repositories & mediator
