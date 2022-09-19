@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
     private val viewModel: MainViewModel by viewModels()
     private val adapter: DealsAdapter by lazy { DealsAdapter(::onItemClick) }
 
