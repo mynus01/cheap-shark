@@ -12,6 +12,7 @@ import com.mynus.presentation.adapter.DealsAdapter
 import com.mynus.presentation.fragment.DetailsBottomSheetFragment
 import com.mynus.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -52,17 +53,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun initObservers() {
         lifecycleScope.launch {
-            viewModel.state.collect { pagingData ->
-                adapter.submitData(pagingData)
-            }
-        }
-
-        lifecycleScope.launch {
             viewModel.loadingState.collect { isLoading ->
                 binding.apply {
                     swDeals.isRefreshing = isLoading
                     rvDeals.isGone = isLoading
                 }
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.state.collectLatest { pagingData ->
+                adapter.submitData(pagingData)
             }
         }
 
