@@ -2,6 +2,7 @@ package com.mynus.datasource.local.dao
 
 import androidx.room.*
 import com.mynus.datasource.local.entity.DealEntity
+import com.mynus.domain.util.Constants
 
 @Dao
 interface DealDao {
@@ -14,7 +15,7 @@ interface DealDao {
     @Query("SELECT * FROM DealEntity WHERE dealID = :gameID ORDER BY title ASC")
     fun getDeal(gameID: String): DealEntity
 
-    @Query("SELECT * FROM DealEntity ORDER BY title ASC LIMIT 60 OFFSET :offset")
+    @Query("SELECT * FROM DealEntity ORDER BY title ASC LIMIT ${Constants.MagicNumbers.PAGE_SIZE} OFFSET :offset")
     fun getDeals(offset: Int): List<DealEntity>
 
     @Delete

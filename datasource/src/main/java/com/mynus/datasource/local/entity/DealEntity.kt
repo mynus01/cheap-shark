@@ -11,5 +11,7 @@ data class DealEntity(
     val salePrice: String,
     val normalPrice: String,
     val isOnSale: Boolean,
-    val thumb: String
+    val thumb: String,
+    val steamAppID: String?,
+    val metacriticLink: String?
 )

@@ -12,7 +12,9 @@ object DealEntityMapper {
                 salePrice = salePrice,
                 normalPrice = normalPrice,
                 isOnSale = isOnSale,
-                thumb = thumb
+                thumb = thumb,
+                steamAppID = steamAppID,
+                metacriticLink = metacriticLink
             )
         }
     }
@@ -25,7 +27,9 @@ object DealEntityMapper {
                 salePrice = salePrice,
                 normalPrice = normalPrice,
                 isOnSale = isOnSale,
-                thumb = thumb
+                thumb = thumb,
+                steamAppID = steamAppID,
+                metacriticLink = metacriticLink
             )
         }
     }
