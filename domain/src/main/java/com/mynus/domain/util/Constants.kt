@@ -8,4 +8,7 @@ object Constants {
         const val STEAM_APP = "https://store.steampowered.com/app/"
         const val METACRITIC = "https://www.metacritic.com"
     }
+    object MagicNumbers {
+        const val PAGE_SIZE = 30
+    }
 }
