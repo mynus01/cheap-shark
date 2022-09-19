@@ -50,7 +50,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun serviceProvider(retrofit: Retrofit): com.mynus.datasource.remote.service.CheapSharkAPIService {
-        return retrofit.create(com.mynus.datasource.remote.service.CheapSharkAPIService::class.java)
+    fun serviceProvider(retrofit: Retrofit): CheapSharkAPIService {
+        return retrofit.create(CheapSharkAPIService::class.java)
     }
 }

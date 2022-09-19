@@ -13,8 +13,8 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface LocalModule {
     @Binds
-    fun localServiceProvider(impl: com.mynus.datasource.local.service.DealLocalServiceImpl): DealLocalService
+    fun localServiceProvider(impl: DealLocalServiceImpl): DealLocalService
 
     @Binds
-    fun getDealsRepositoryProvider(impl: com.mynus.datasource.local.repository.GetDealsLocalRepositoryImpl): com.mynus.datasource.local.repository.GetDealsLocalRepository
+    fun getDealsRepositoryProvider(impl: GetDealsLocalRepositoryImpl): GetDealsLocalRepository
 }

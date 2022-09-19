@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.core.view.isInvisible
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.mynus.domain.model.Deal
-import com.mynus.domain.util.Constants
+import com.mynus.core.util.Constants
 import com.mynus.presentation.R
 import com.mynus.presentation.databinding.FragmentDetailsBinding
 import com.mynus.presentation.util.loadImage
