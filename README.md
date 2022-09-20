@@ -29,6 +29,5 @@ Cheap shark is an application for discovering new games and deals, based on the 
 - Notification system for when wishlisted games are in promo
 
 ## 🌄 Screenshots
-
-![Screenshot_20220919_164617](https://user-images.githubusercontent.com/63685016/191102939-065c55e8-cb66-438e-b6a6-015889290dce.png)
-![Screenshot_20220919_164645](https://user-images.githubusercontent.com/63685016/191102993-a065ef86-7b33-41f1-9aa0-cafb8d288ec4.png)
+![Screenshot_20220919_220459](https://user-images.githubusercontent.com/63685016/191145237-de82707d-f673-4569-b7fb-2178d5095d84.png)
+![Screenshot_20220919_220551](https://user-images.githubusercontent.com/63685016/191145262-24da3794-ab0b-4c8c-a472-abb4de44b021.png)
