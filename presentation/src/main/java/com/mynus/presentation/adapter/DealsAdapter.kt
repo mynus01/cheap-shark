@@ -3,7 +3,8 @@ package com.mynus.presentation.adapter
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.view.isInvisible
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.isGone
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.mynus.domain.model.Deal
@@ -42,12 +43,17 @@ class DealsAdapter(
                 tvNormalPrice.text = itemView.context.getString(R.string.deal_price_template, deal.normalPrice)
                 if (deal.isOnSale && deal.salePrice.isNotBlank()) {
                     tvSalePrice.text = itemView.context.getString(R.string.deal_price_template, deal.salePrice)
-                    tvSalePrice.isInvisible = false
+                    tvSalePrice.isGone = false
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                    tvNormalPrice.setTextColor(ResourcesCompat.getColor(root.resources, R.color.red_orange, null))
+                    tvDiscountPercentage.text = String.format("-%.0f%%", 100 - (deal.salePrice.toDouble() / deal.normalPrice.toDouble() * 100))
+                    cvDiscountPercentage.isGone = false
                 } else {
-                    tvSalePrice.isInvisible = true
+                    tvSalePrice.isGone = true
+                    cvDiscountPercentage.isGone = true
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags
+                    tvNormalPrice.setTextColor(ResourcesCompat.getColor(root.resources, android.R.color.white, null))
                 }
             }
         }
