@@ -46,9 +46,11 @@ class DealsAdapter(
                     tvSalePrice.isGone = false
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                     tvNormalPrice.setTextColor(ResourcesCompat.getColor(root.resources, R.color.red_orange, null))
-                    //TODO: String.format("-%.0f%%", 100 - (promoPrice / price * 100))
+                    tvDiscountPercentage.text = String.format("-%.0f%%", 100 - (deal.salePrice.toDouble() / deal.normalPrice.toDouble() * 100))
+                    cvDiscountPercentage.isGone = false
                 } else {
                     tvSalePrice.isGone = true
+                    cvDiscountPercentage.isGone = true
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
                     tvNormalPrice.paintFlags = tvNormalPrice.paintFlags
                     tvNormalPrice.setTextColor(ResourcesCompat.getColor(root.resources, android.R.color.white, null))
