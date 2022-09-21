@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isGone
 import androidx.core.view.isInvisible
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.mynus.domain.model.Deal
 import com.mynus.core.util.Constants
@@ -20,6 +21,13 @@ class DetailsBottomSheetFragment(
     private val deal: Deal
 ) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentDetailsBinding
+
+    override fun onStart() {
+        super.onStart()
+
+        val behavior = BottomSheetBehavior.from(requireView().parent as View)
+        behavior.state = BottomSheetBehavior.STATE_EXPANDED
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
