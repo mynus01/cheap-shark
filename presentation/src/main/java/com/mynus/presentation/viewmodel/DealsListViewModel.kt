@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class DealsListViewModel @Inject constructor(
     private val mediator: DealsMediator
 ): ViewModel() {
     private val _state = MutableSharedFlow<PagingData<Deal>>()

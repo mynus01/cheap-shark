@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/presentation_nav_graph"
+    app:startDestination="@id/dealsListFragment">
+
+    <fragment
+        android:id="@+id/dealsListFragment"
+        android:name="com.mynus.presentation.fragment.DealsListFragment"
+        android:label="fragment_deals_list"
+        tools:layout="@layout/fragment_deals_list" >
+        <action
+            android:id="@+id/action_dealsListFragment_to_detailsBottomSheetFragment"
+            app:destination="@id/detailsBottomSheetFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/detailsBottomSheetFragment"
+        android:name="com.mynus.presentation.fragment.DetailsBottomSheetFragment"
+        android:label="DetailsBottomSheetFragment"
+        tools:layout="@layout/fragment_details_bottom_sheet">
+
+        <argument
+            android:name="deal"
+            app:argType="com.mynus.presentation.parcelable.model.DealParcelable" />
+    </dialog>
+</navigation>
