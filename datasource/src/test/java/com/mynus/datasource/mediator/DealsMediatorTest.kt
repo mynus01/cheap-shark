@@ -1,6 +1,7 @@
 package com.mynus.datasource.mediator
 
 import androidx.paging.PagingData
+import com.mynus.datasource.base.BaseTest
 import com.mynus.datasource.local.repository.GetDealsLocalRepository
 import com.mynus.datasource.remote.repository.GetDealsRemoteRepository
 import com.mynus.domain.model.Deal
@@ -9,21 +10,17 @@ import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.*
-import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
 @ExperimentalCoroutinesApi
-open class DealsMediatorTest {
-    private val testDispatcher: TestDispatcher = UnconfinedTestDispatcher()
-
+open class DealsMediatorTest: BaseTest() {
     @get:Rule
     val mockkRule = MockKRule(this)
 
@@ -38,15 +35,8 @@ open class DealsMediatorTest {
     lateinit var mediator: DealsMediator
 
     @Before
-    fun setup() {
-        Dispatchers.setMain(testDispatcher)
-
+    fun initMediator() {
         mediator = DealsMediatorImpl(remoteRepository, localRepository, connectionChecker)
-    }
-
-    @After
-    fun teardown() {
-        Dispatchers.resetMain()
     }
 
     class DealsMediatorTestImpl : DealsMediatorTest() {
@@ -72,7 +62,6 @@ open class DealsMediatorTest {
             val result = mediator.getDeals().first()
 
             Assert.assertEquals(PagingData.empty<Deal>(), result)
-
         }
     }
 }
