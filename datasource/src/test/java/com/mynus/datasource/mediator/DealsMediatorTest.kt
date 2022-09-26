@@ -21,9 +21,6 @@ import org.junit.Test
 
 @ExperimentalCoroutinesApi
 open class DealsMediatorTest: BaseTest() {
-    @get:Rule
-    val mockkRule = MockKRule(this)
-
     @MockK
     lateinit var remoteRepository: GetDealsRemoteRepository
 
@@ -40,6 +37,9 @@ open class DealsMediatorTest: BaseTest() {
     }
 
     class DealsMediatorTestImpl : DealsMediatorTest() {
+        @get:Rule
+        val mockkRule = MockKRule(this)
+
         private val responseFlow = flow<PagingData<Deal>> { emit(PagingData.empty()) }
 
         @Test
